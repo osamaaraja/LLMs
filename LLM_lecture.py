@@ -26,6 +26,17 @@ def print_all(input, output, prediction, labels):
     #print_encoding(input)
     print(f'Model Output: {output}')
     print(f'Prediction is: {labels[prediction]}')
+    print()
+
+def print_tokenization(input_str, input_tokens, input_ids, input_ids_special_tokens, decoded_str):
+    print("Start:                 ", input_str)
+    print("Tokenize:              ", input_tokens)
+    print("Convert token to ids:  ", input_ids)
+    print("Add special tokens:    ", input_ids_special_tokens)
+    print("-----------------------------------------------------------------------")
+    print("Decode:   ", decoded_str)
+    print()
+
 
 # Initialize the tokenizer
 tokenizer = AutoTokenizer.from_pretrained("siebert/sentiment-roberta-large-english") # For the purpose of splitting text into tokens
@@ -47,11 +58,26 @@ print_all(input, output, prediction, labels)
 from transformers import DistilBertTokenizer, DistilBertTokenizerFast
 tokenizer_bert = DistilBertTokenizer.from_pretrained("DistilBert-base-cased")
 tokenizer_fast = DistilBertTokenizerFast.from_pretrained("DistilBert-base-cased")
+
 input_str = "Hugging Face Transformers are great!"
+
 tokenized_input_auto = tokenizer(input_str)
 tokenized_input_bert = tokenizer_bert(input_str)
 tokenized_input_fast = tokenizer_fast(input_str)
+
 print("AUTO:",tokenized_input_auto)
 print("BERT:",tokenized_input_bert)
 print("BERT FAST:",tokenized_input_fast)
+print()
 
+# getting some insights into the tokenization process
+cls = [tokenizer.cls_token_id]
+sep = [tokenizer.sep_token_id]
+
+# tokenization steps
+input_tokens = tokenizer.tokenize(input_str)
+input_ids = tokenizer.convert_tokens_to_ids(input_tokens)
+input_ids_special_tokens = cls + input_ids + sep
+decoded_str = tokenizer.decode(input_ids_special_tokens)
+
+print_tokenization(input_str, input_tokens, input_ids, input_ids_special_tokens, decoded_str)
