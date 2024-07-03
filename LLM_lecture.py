@@ -33,7 +33,7 @@ def print_tokenization(input_str, input_tokens, input_ids, input_ids_special_tok
     print("Tokenize:              ", input_tokens)
     print("Convert token to ids:  ", input_ids)
     print("Add special tokens:    ", input_ids_special_tokens)
-    print("-----------------------------------------------------------------------")
+    print("-"*100)
     print("Decode:   ", decoded_str)
     print()
 
