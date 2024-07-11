@@ -1,11 +1,11 @@
 from langchain.prompts import ChatPromptTemplate
 
 # creating a prompt template with one value
-template = "Tell me a joke about {topic}."
+template = "Tell me a story about {topic}."
 prompt_template = ChatPromptTemplate.from_template(template=template)
 
 print("------- Prompt from Template -------")
-prompt = prompt_template.invoke({"topic": "cat"})
+prompt = prompt_template.invoke({"topic": "AI"})
 print(prompt)
 print("-"*100)
 
