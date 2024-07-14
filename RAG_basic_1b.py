@@ -24,7 +24,7 @@ db = Chroma(persist_directory=persistent_dir, embedding_function=embeddings)
 query = "Who is Raksha?"
 
 # Retrieve relevant documents based on the query
-# Start with k=5 and a lower score threshold
+
 retriever = db.as_retriever(search_type="similarity_score_threshold", search_kwargs={"k": 3, "score_threshold":0.4})
 relevant_docs = retriever.invoke(query)
 
