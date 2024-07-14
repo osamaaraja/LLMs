@@ -14,6 +14,7 @@ openai_api_key = os.getenv('OPEN_API_KEY')
 if not openai_api_key:
     raise ValueError("OpenAI API key not found in environment variables. Please set the OPEN_API_KEY in your .env file.")
 
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 books_dir = os.path.join(current_dir, 'books') # multiple books can be downloaded from https://www.gutenberg.org/
 db_dir = os.path.join(current_dir, 'db')
