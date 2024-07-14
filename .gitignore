@@ -1,2 +1,2 @@
 .env
-echo db/ >> .gitignore
+db/
