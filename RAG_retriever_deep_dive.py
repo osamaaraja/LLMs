@@ -15,7 +15,7 @@ if not openai_api_key:
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 db_dir = os.path.join(current_dir, 'db')
-persistent_directory = os.path.join(db_dir, "chroma_db_with_metadata") # Already exisiting
+persistent_directory = os.path.join(db_dir, "chroma_db_with_metadata") # Already existing
 
 embeddings = OpenAIEmbeddings(model="text-embedding-ada-002", api_key=openai_api_key)
 db = Chroma(persist_directory=persistent_directory, embedding_function=embeddings)
