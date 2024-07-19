@@ -14,7 +14,7 @@ if not openai_api_key:
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 db_dir = os.path.join(current_dir, 'db')
-persistent_directory = os.path.join(db_dir, "chroma_db_apple") # Already existing
+persistent_directory = os.path.join(db_dir, "chroma_db_apple")
 
 # Step-1: Scrape the content from apple.com using WebBasedLoader
 # WebBasedLoader loads web pages and extracts their content
