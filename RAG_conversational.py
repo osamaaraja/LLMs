@@ -72,7 +72,6 @@ history_aware_retriever = create_history_aware_retriever(model, retriever, conte
 # create a retrieval chain that combines the history aware retriever
 rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
 
-
 # function to simulate a continual chat
 def continual_chat():
     print("Start chatting with the AI! Type 'exit' to end the conversation.")
