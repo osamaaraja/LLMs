@@ -24,7 +24,7 @@ class CustomTextSplitter(TextSplitter):
 
 
 def create_vector_store(docs, store_name, embeddings):
-    persistent_directory = os.path.join('db', store_name)
+    persistent_directory = os.path.join('../db', store_name)
 
     if os.path.exists(persistent_directory):
         print(f"Vector store {store_name} already exists. Skipping creation.")
