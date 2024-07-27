@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.gpt_message td {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    background: linear-gradient(135deg, #6a0dad, #4B0082);
+    border-radius: 20px;
+    max-width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: large;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    transition: transform 0.2s;
+}
+
+.gpt_message td:hover {
+    transform: scale(1.05);
+}
+
+.user_message td {
+    margin-right: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    background: linear-gradient(135deg, #301934, #140a1e);
+    border-radius: 20px;
+    max-width: 80%;
+    float: right;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: large;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    transition: transform 0.2s;
+}
+
+.user_message td:hover {
+    transform: scale(1.05);
+}
+
+/* Optional: Animation for message appearance */
+.gpt_message td, .user_message td {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
