@@ -3,7 +3,6 @@
 
 import sentencepiece as spm
 import os
-
 # Creating a txt file
 with open("toy.txt", "w", encoding="utf-8") as f:
     f.write("""IT was seven o'clock of a very warm evening in the Seeonee hills when
